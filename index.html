@@ -27,6 +27,39 @@
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* MODO ESCURO */
+        body.modo-escuro {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+        }
+
+        body.modo-escuro header {
+            background: linear-gradient(135deg, #0f3d0f 0%, #1a5c1a 100%);
+        }
+
+        body.modo-escuro nav {
+            background: #0a1f0a;
+        }
+
+        body.modo-escuro section {
+            background: #2a2a3e;
+            color: #e0e0e0;
+        }
+
+        body.modo-escuro section h2 {
+            color: #8bc34a;
+        }
+
+        body.modo-escuro .highlight-box {
+            background: #1e3a1e;
+            border-left-color: #8bc34a;
+        }
+
+        body.modo-escuro footer {
+            background: #0a1f0a;
         }
 
         header {
@@ -50,11 +83,16 @@
 
         nav {
             background: #1a3d0f;
-            padding: 1rem 0;
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         nav ul {
@@ -63,6 +101,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 2rem;
+            flex: 1;
         }
 
         nav a {
@@ -77,6 +116,23 @@
         nav a:hover {
             background: #6ba544;
             transform: translateY(-2px);
+        }
+
+        #botao-tema {
+            background: #6ba544;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        #botao-tema:hover {
+            background: #8bc34a;
+            transform: scale(1.05);
         }
 
         main {
@@ -153,6 +209,61 @@
             font-size: 1.3rem;
         }
 
+        /* ESTILOS DO FORMULÁRIO */
+        #formulario-contato {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        #formulario-contato input,
+        #formulario-contato textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        #formulario-contato input:focus,
+        #formulario-contato textarea:focus {
+            outline: none;
+            border-color: #6ba544;
+        }
+
+        #formulario-contato textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        #formulario-contato button {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        #formulario-contato button:hover {
+            background: linear-gradient(135deg, #4a7c2e 0%, #6ba544 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        #mensagem-status {
+            margin-top: 1rem;
+            font-weight: bold;
+            text-align: center;
+            min-height: 1.5rem;
+        }
+
         footer {
             background: #1a3d0f;
             color: white;
@@ -170,9 +281,14 @@
                 font-size: 1.8rem;
             }
 
+            nav {
+                flex-direction: column;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
+                width: 100%;
             }
 
             section {
@@ -194,11 +310,13 @@
 </header>
 
 <nav aria-label="Navegação principal">
+    <button id="botao-tema" aria-label="Alternar tema">🌙</button>
     <ul>
         <li><a href="#introducao">Introdução</a></li>
         <li><a href="#producao">Produção Agrícola</a></li>
         <li><a href="#sustentabilidade">Sustentabilidade</a></li>
         <li><a href="#tecnologia">Tecnologia no Campo</a></li>
+        <li><a href="#contato">Contato</a></li>
         <li><a href="#conclusao">Conclusão</a></li>
     </ul>
 </nav>
@@ -272,6 +390,18 @@
         </ul>
     </section>
 
+    <section id="contato">
+        <h2>📬 Entre em Contato</h2>
+        <p>Quer saber mais sobre o projeto? Envie sua mensagem!</p>
+        <form id="formulario-contato">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+            <p id="mensagem-status"></p>
+        </form>
+    </section>
+
     <section id="conclusao">
         <h2>🎯 Conclusão</h2>
         <p>
@@ -297,6 +427,8 @@
         © 2026 - Todos os direitos reservados
     </p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
