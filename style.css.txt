@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#dff7d8,#f2fff0);
+    min-height:100vh;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+    color:#1d5e20;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+.personagem{
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.avatar{
+    font-size:80px;
+}
+
+.fala h2{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+main{
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    width:100%;
+    max-width:1200px;
+}
+
+.flashcard{
+    position:relative;
+    height:220px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:0.8s;
+}
+
+.flashcard.virado{
+    transform:rotateY(180deg);
+}
+
+.frente,
+.verso{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    backface-visibility:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.frente{
+    background:white;
+    color:#1d5e20;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+.verso{
+    background:#4caf50;
+    color:white;
+    transform:rotateY(180deg);
+    font-size:1.1rem;
+}
