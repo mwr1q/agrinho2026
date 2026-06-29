@@ -1,103 +1,415 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* =====================================================
+   style.css - Projeto Agrinho 2026
+   Agro Forte, Futuro Sustentável
+   ===================================================== */
+
+/* =============================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:linear-gradient(135deg,#dff7d8,#f2fff0);
-    min-height:100vh;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-header{
-    text-align:center;
-    padding:30px;
-    color:#1d5e20;
+/* =============================================
+   2. MODO ESCURO (Dark Mode)
+   ============================================= */
+body.modo-escuro {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
 }
 
-header h1{
-    font-size:3rem;
+body.modo-escuro header {
+    background: linear-gradient(135deg, #0f3d0f 0%, #1a5c1a 100%);
 }
 
-header p{
-    font-size:1.2rem;
-    margin-top:10px;
+body.modo-escuro nav {
+    background: #0a1f0a;
 }
 
-.personagem{
-    width:80%;
-    max-width:900px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+body.modo-escuro section {
+    background: #2a2a3e;
+    color: #e0e0e0;
 }
 
-.avatar{
-    font-size:80px;
+body.modo-escuro section h2 {
+    color: #8bc34a;
 }
 
-.fala h2{
-    color:#2e7d32;
-    margin-bottom:10px;
+body.modo-escuro .highlight-box {
+    background: #1e3a1e;
+    border-left-color: #8bc34a;
+    color: #e0e0e0;
 }
 
-main{
-    display:flex;
-    justify-content:center;
-    padding:40px;
+body.modo-escuro footer {
+    background: #0a1f0a;
 }
 
-.card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    width:100%;
-    max-width:1200px;
+body.modo-escuro #formulario-contato input,
+body.modo-escuro #formulario-contato textarea {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    border-color: #444;
 }
 
-.flashcard{
-    position:relative;
-    height:220px;
-    cursor:pointer;
-    transform-style:preserve-3d;
-    transition:0.8s;
+body.modo-escuro #formulario-contato input:focus,
+body.modo-escuro #formulario-contato textarea:focus {
+    border-color: #8bc34a;
 }
 
-.flashcard.virado{
-    transform:rotateY(180deg);
+/* =============================================
+   3. HEADER (Cabeçalho)
+   ============================================= */
+header {
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.frente,
-.verso{
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-    backface-visibility:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.frente{
-    background:white;
-    color:#1d5e20;
-    font-size:1.3rem;
-    font-weight:bold;
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-.verso{
-    background:#4caf50;
-    color:white;
-    transform:rotateY(180deg);
-    font-size:1.1rem;
+/* =============================================
+   4. NAVEGAÇÃO (Menu)
+   ============================================= */
+nav {
+    background: #1a3d0f;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: background 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #6ba544;
+    transform: translateY(-2px);
+}
+
+/* Botão de Tema */
+#botao-tema {
+    background: #6ba544;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#botao-tema:hover {
+    background: #8bc34a;
+    transform: scale(1.05);
+}
+
+/* =============================================
+   5. CONTEÚDO PRINCIPAL
+   ============================================= */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background: white;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    color: #2d5016;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #6ba544;
+}
+
+section p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+/* Imagens das Seções */
+.section-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background: linear-gradient(135deg, #6ba544 0%, #2d5016 100%);
+    border-radius: 10px;
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+/* Caixas de Destaque */
+.highlight-box {
+    background: #f0f8e8;
+    border-left: 5px solid #6ba544;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+}
+
+/* Listas de Features */
+ul.features {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+ul.features li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+ul.features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6ba544;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* =============================================
+   6. FORMULÁRIO DE CONTATO
+   ============================================= */
+#formulario-contato {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+#formulario-contato input,
+#formulario-contato textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#formulario-contato input:focus,
+#formulario-contato textarea:focus {
+    outline: none;
+    border-color: #6ba544;
+}
+
+#formulario-contato textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#formulario-contato button {
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+#formulario-contato button:hover {
+    background: linear-gradient(135deg, #4a7c2e 0%, #6ba544 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#mensagem-status {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+    min-height: 1.5rem;
+}
+
+/* =============================================
+   7. FOOTER (Rodapé)
+   ============================================= */
+footer {
+    background: #1a3d0f;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* =============================================
+   8. RESPONSIVIDADE (Mobile)
+   ============================================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .section-image {
+        height: 200px;
+        font-size: 3rem;
+    }
+
+    #formulario-contato input,
+    #formulario-contato textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    #formulario-contato button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    section {
+        padding: 1.2rem;
+    }
+
+    .highlight-box {
+        padding: 1rem;
+    }
+}
+
+/* =============================================
+   9. ANIMAÇÕES
+   ============================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* =============================================
+   10. UTILITÁRIOS
+   ============================================= */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
 }
