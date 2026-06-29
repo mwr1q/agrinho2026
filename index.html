@@ -1,77 +1,302 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Agro Forte, Futuro Sustentável</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto Agrinho 2026 - Agro Forte, Futuro Sustentável: equilíbrio entre produção agrícola e preservação ambiental">
+    <meta name="keywords" content="agronegócio, sustentabilidade, agricultura, meio ambiente, Agrinho 2026">
+    <meta name="author" content="Projeto Agrinho">
+    <meta property="og:title" content="Agro Forte, Futuro Sustentável">
+    <meta property="og:description" content="Equilíbrio entre produção e meio ambiente">
+    <meta property="og:type" content="website">
+    <title>Agro Forte, Futuro Sustentável - Agrinho 2026</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #1a3d0f;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #6ba544;
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            color: #2d5016;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #6ba544;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: linear-gradient(135deg, #6ba544 0%, #2d5016 100%);
+            border-radius: 10px;
+            margin: 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .highlight-box {
+            background: #f0f8e8;
+            border-left: 5px solid #6ba544;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+
+        ul.features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        ul.features li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul.features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6ba544;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background: #1a3d0f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
- <header>
- <h1>Agro Forte, Futuro Sustentável</h1>
- <p>Equilíbrio entre produção e meio ambiente</p>
+<header>
+    <h1>🌱 Agro Forte, Futuro Sustentável</h1>
+    <p>Equilíbrio entre produção e meio ambiente</p>
+</header>
 
- <nav>
- <ul>
- <li><a href="#introducao">Introdução</a></li>
- <li><a href="#producao">Produção Agrícola</a></li>
- <li><a href="#sustentabilidade">Sustentabilidade</a></li>
- <li><a href="#tecnologia">Tecnologia no Campo</a></li>
- <li><a href="#conclusao">Conclusão</a></li>
- </ul>
- </nav>
- </header>
+<nav aria-label="Navegação principal">
+    <ul>
+        <li><a href="#introducao">Introdução</a></li>
+        <li><a href="#producao">Produção Agrícola</a></li>
+        <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#tecnologia">Tecnologia no Campo</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+    </ul>
+</nav>
 
- <main>
+<main>
 
- <section id="introducao">
- <h2>Introdução</h2>
- <p>
- O agronegócio é fundamental para a economia brasileira e para a
- produção de alimentos. Ao mesmo tempo, é necessário preservar
- os recursos naturais para garantir um futuro sustentável.
- </p>
- </section>
+    <section id="introducao">
+        <h2>📖 Introdução</h2>
+        <p>
+            O agronegócio é fundamental para a economia brasileira e para a
+            produção de alimentos. Ao mesmo tempo, é necessário preservar
+            os recursos naturais para garantir um futuro sustentável.
+        </p>
+        <div class="highlight-box">
+            <p><strong>Você sabia?</strong> O Brasil é um dos maiores produtores de alimentos do mundo, alimentando mais de 1 bilhão de pessoas globalmente!</p>
+        </div>
+        <div class="section-image" role="img" aria-label="Campo agrícola verde com plantações">
+            🌾
+        </div>
+    </section>
 
- <section id="producao">
- <h2>Produção Agrícola</h2>
- <p>
- A produção agrícola fornece alimentos, gera empregos e contribui
- para o desenvolvimento do país.
- </p>
- </section>
+    <section id="producao">
+        <h2>🚜 Produção Agrícola</h2>
+        <p>
+            A produção agrícola fornece alimentos, gera empregos e contribui
+            para o desenvolvimento do país. O setor é responsável por aproximadamente
+            24% do PIB brasileiro e emprega milhões de trabalhadores.
+        </p>
+        <ul class="features">
+            <li>Produção de grãos, frutas, verduras e proteínas animais</li>
+            <li>Geração de empregos no campo e nas cidades</li>
+            <li>Exportação para mais de 180 países</li>
+            <li>Desenvolvimento tecnológico constante</li>
+        </ul>
+    </section>
 
- <section id="sustentabilidade">
- <h2>Sustentabilidade Ambiental</h2>
- <p>
- Práticas como o uso racional da água, a preservação das florestas
- e a redução do desperdício ajudam a proteger o meio ambiente.
- </p>
- </section>
+    <section id="sustentabilidade">
+        <h2>🌍 Sustentabilidade Ambiental</h2>
+        <p>
+            Práticas como o uso racional da água, a preservação das florestas
+            e a redução do desperdício ajudam a proteger o meio ambiente.
+            A agricultura sustentável busca produzir alimentos de qualidade
+            sem comprometer os recursos naturais para as futuras gerações.
+        </p>
+        <div class="highlight-box">
+            <p><strong>Práticas sustentáveis incluem:</strong></p>
+            <ul class="features">
+                <li>Rotação de culturas e plantio direto</li>
+                <li>Uso eficiente de água e energia</li>
+                <li>Preservação de áreas nativas</li>
+                <li>Reciclagem de resíduos agrícolas</li>
+            </ul>
+        </div>
+        <div class="section-image" role="img" aria-label="Floresta preservada ao lado de plantação">
+            🌳
+        </div>
+    </section>
 
- <section id="tecnologia">
- <h2>Tecnologia no Campo</h2>
- <p>
- Drones, sensores e agricultura de precisão tornam a produção mais
- eficiente e sustentável.
- </p>
- </section>
+    <section id="tecnologia">
+        <h2>💻 Tecnologia no Campo</h2>
+        <p>
+            Drones, sensores e agricultura de precisão tornam a produção mais
+            eficiente e sustentável. A tecnologia 4.0 chegou ao campo para
+            revolucionar a forma como produzimos alimentos.
+        </p>
+        <ul class="features">
+            <li><strong>Drones:</strong> Monitoramento de lavouras e aplicação precisa de insumos</li>
+            <li><strong>Sensores IoT:</strong> Monitoramento de umidade, temperatura e nutrientes do solo</li>
+            <li><strong>Inteligência Artificial:</strong> Análise de dados para tomada de decisões</li>
+            <li><strong>GPS e maquinário autônomo:</strong> Plantio e colheita de alta precisão</li>
+        </ul>
+    </section>
 
- <section id="conclusao">
- <h2>Conclusão</h2>
- <p>
- Produzir mais com responsabilidade ambiental é o caminho para
- garantir alimentos, desenvolvimento e qualidade de vida para as
- futuras gerações.
- </p>
- </section>
+    <section id="conclusao">
+        <h2>🎯 Conclusão</h2>
+        <p>
+            Produzir mais com responsabilidade ambiental é o caminho para
+            garantir alimentos, desenvolvimento e qualidade de vida para as
+            futuras gerações. O agronegócio brasileiro tem mostrado que é
+            possível conciliar produção em larga escala com preservação ambiental.
+        </p>
+        <div class="highlight-box">
+            <p><strong>O futuro é agora!</strong> Cada pequeno gesto conta: desde o produtor rural que adota práticas sustentáveis até o consumidor que escolhe produtos de origem responsável.</p>
+        </div>
+        <div class="section-image" role="img" aria-label="Mãos segurando uma planta verde brotando">
+            🌱
+        </div>
+    </section>
 
- </main>
+</main>
 
- <footer>
- <p>Projeto AGRINHO 2026 - Agro Forte, Futuro Sustentável</p>
- </footer>
+<footer>
+    <p><strong>Projeto AGRINHO 2026</strong></p>
+    <p>Agro Forte, Futuro Sustentável</p>
+    <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+        © 2026 - Todos os direitos reservados
+    </p>
+</footer>
 
 </body>
 </html>
